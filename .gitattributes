@@ -1,0 +1,5 @@
+# CSVs sem conversao de fim de linha (ha arquivos \n e \r\n)
+*.csv -text
+*.c   text
+*.h   text
+Makefile text eol=lf

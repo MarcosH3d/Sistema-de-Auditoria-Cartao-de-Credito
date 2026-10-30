@@ -1,0 +1,18 @@
+# binarios e objetos
+*.o
+*.exe
+golpe
+teste_a
+a.out
+
+# arquivos gerados pelo programa (a pasta existe via .gitkeep)
+saida/*
+!saida/.gitkeep
+*.pdf
+
+# IDEs
+*.layout
+*.depend
+bin/
+obj/
+.vscode/
