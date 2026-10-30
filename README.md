@@ -10,10 +10,10 @@ suspeitas de fraude, gera um CSV por cartão e emite relatório de perfil de com
 
 | Integrante | Responsável por | Tarefas | Arquivos |
 |---|---|---|---|
-| A — (nome) | Leitura dos CSVs, validação de campos e listas dinâmicas (base do sistema); apoia a integração com a persistência | T01, T02, T03 | `src/leitor_csv.c`, `src/lista.c`, `include/transacao.h`, `include/leitor_csv.h` |
-| B — (nome) | Regras de fraude A, B e C, conversão de timestamp, haversine; reclassificação após novas cargas (com C) | T04, T05, T06, T07 (+T11 com C) | `src/fraude.c`, `src/tempo.c`, `include/fraude.h`, `include/tempo.h` |
-| C — (nome) | CSV por cartão, carga incremental, ordem cronológica, dados brutos para reclassificação | T08, T09, T10, T23 (+T11 com B) | `src/persistencia.c`, `include/persistencia.h` |
-| D — (nome) | Relatório de perfil por categoria, validação de entradas, testes de aceitação do grupo | requisito 3 | `src/relatorio.c`, `include/relatorio.h`, `src/main.c` |
+| A — (Marcos) | Leitura dos CSVs, validação de campos e listas dinâmicas (base do sistema); apoia a integração com a persistência | T01, T02, T03 | `src/leitor_csv.c`, `src/lista.c`, `include/transacao.h`, `include/leitor_csv.h` |
+| B — (Pedro) | Regras de fraude A, B e C, conversão de timestamp, haversine; reclassificação após novas cargas (com C) | T04, T05, T06, T07 (+T11 com C) | `src/fraude.c`, `src/tempo.c`, `include/fraude.h`, `include/tempo.h` |
+| C — (Laura) | CSV por cartão, carga incremental, ordem cronológica, dados brutos para reclassificação | T08, T09, T10, T23 (+T11 com B) | `src/persistencia.c`, `include/persistencia.h` |
+| D — (Ycaro) | Relatório de perfil por categoria, validação de entradas, testes de aceitação do grupo | requisito 3 | `src/relatorio.c`, `include/relatorio.h`, `src/main.c` |
 
 Requisito 4 (modularização, sem globais, sem duplicação de código) é de todos.
 
