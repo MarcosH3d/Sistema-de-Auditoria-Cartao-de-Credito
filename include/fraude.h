@@ -1,14 +1,29 @@
 #ifndef FRAUDE_H
 #define FRAUDE_H
 
-/* Regras de fraude A, B e C (requisito 1).  DONO: Integrante B (T04 a T07)
- * Regra C: distancia por haversine (raio da Terra ~6371 km), limite 78 km.
- * Atencao: "mesma fatura" precisa de uma definicao unica no grupo
- * (sugestao: mesmo ano+mes da transacao). Combinar com C (T11). */
+#include "transacao.h"
+
+#define LIMITE_INTERVALO_SEG   120     
+#define FATOR_VALOR_ATIPICO    3       
+#define LIMITE_DISTANCIA_KM    78.0    
+#define RAIO_TERRA_KM          6371.0  
+
+typedef struct {
+    char tipoA;
+    char tipoB;
+    char tipoC;
+} ResultadoFraude;
+
 double haversineKm(double lat1, double lon1, double lat2, double lon2);
 
-/* TODO: regra A (<2min na mesma fatura), regra B (>=3x a media das DEMAIS
- * transacoes da fatura) e regra C (loja a mais de 78 km da residencia),
- * cada uma em funcao separada, e a combinacao em fraud_typeA/B/C (Y/N). */
+int regraA(const ListaTransacoes *lista, const NoTransacao *alvo);
+
+int regraB(const ListaTransacoes *lista, const NoTransacao *alvo);
+
+int regraC(const Transacao *t);
+
+ResultadoFraude classificarTransacao(const ListaTransacoes *lista, const NoTransacao *alvo);
+
+int transacaoSuspeita(ResultadoFraude r);
 
 #endif
